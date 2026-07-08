@@ -12,6 +12,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    Console.WriteLine("OpenAPI is available at /openapi");
 }
 
 app.UseHttpsRedirection();

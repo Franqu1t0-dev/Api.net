@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fran\\Desktop\\DotNet\\ApiEcommerce\\ApiEcommerce\\ApiEcommerce.csproj": {}
+    "C:\\Users\\Usuario\\Desktop\\DotNet\\Api.net\\ApiEcommerce\\ApiEcommerce.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fran\\Desktop\\DotNet\\ApiEcommerce\\ApiEcommerce\\ApiEcommerce.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\DotNet\\Api.net\\ApiEcommerce\\ApiEcommerce.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fran\\Desktop\\DotNet\\ApiEcommerce\\ApiEcommerce\\ApiEcommerce.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\DotNet\\Api.net\\ApiEcommerce\\ApiEcommerce.csproj",
         "projectName": "ApiEcommerce",
-        "projectPath": "C:\\Users\\Fran\\Desktop\\DotNet\\ApiEcommerce\\ApiEcommerce\\ApiEcommerce.csproj",
-        "packagesPath": "C:\\Users\\Fran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fran\\Desktop\\DotNet\\ApiEcommerce\\ApiEcommerce\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\DotNet\\Api.net\\ApiEcommerce\\ApiEcommerce.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\DotNet\\Api.net\\ApiEcommerce\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Fran\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
