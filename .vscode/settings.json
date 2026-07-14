@@ -1,0 +1,8 @@
+{
+    "chat.agent.enabled": true,
+    "chat.disableAIFeatures": false,
+    "github.copilot.nextEditSuggestions.allowWhitespaceOnlyChanges": false,
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "github.copilot.nextEditSuggestions.extendedRange": false,
+    "github.copilot.nextEditSuggestions.fixes": false
+}
