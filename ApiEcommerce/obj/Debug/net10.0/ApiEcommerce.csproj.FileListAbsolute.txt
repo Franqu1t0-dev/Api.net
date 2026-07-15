@@ -6,6 +6,8 @@ C:\Users\Usuario\Desktop\DotNet\Api.net\ApiEcommerce\bin\Debug\net10.0\ApiEcomme
 C:\Users\Usuario\Desktop\DotNet\Api.net\ApiEcommerce\bin\Debug\net10.0\ApiEcommerce.runtimeconfig.json
 C:\Users\Usuario\Desktop\DotNet\Api.net\ApiEcommerce\bin\Debug\net10.0\ApiEcommerce.dll
 C:\Users\Usuario\Desktop\DotNet\Api.net\ApiEcommerce\bin\Debug\net10.0\ApiEcommerce.pdb
+C:\Users\Usuario\Desktop\DotNet\Api.net\ApiEcommerce\bin\Debug\net10.0\AutoMapper.dll
+C:\Users\Usuario\Desktop\DotNet\Api.net\ApiEcommerce\bin\Debug\net10.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Usuario\Desktop\DotNet\Api.net\ApiEcommerce\bin\Debug\net10.0\Azure.Core.dll
 C:\Users\Usuario\Desktop\DotNet\Api.net\ApiEcommerce\bin\Debug\net10.0\Azure.Identity.dll
 C:\Users\Usuario\Desktop\DotNet\Api.net\ApiEcommerce\bin\Debug\net10.0\Humanizer.dll
