@@ -45,7 +45,7 @@ namespace ApiEcommerce.Controllers
 
             if (category == null)
             {
-                return NotFound();
+                return NotFound($"La categoria con el id {id} no existe");
             }
 
             var categoryDto = _mapper.Map<CategoryDto>(category);
