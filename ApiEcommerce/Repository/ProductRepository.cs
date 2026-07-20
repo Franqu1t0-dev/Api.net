@@ -28,13 +28,16 @@ public class ProductRepository : IProductRepository
         }
         return _db.Products.Include(p => p.Category).Where(p=>p.CategoryId == categoryId).OrderBy(p=>p.Name).ToList();
     }
-    public ICollection<Product> SearchProduct(string name)
+    public ICollection<Product> SearchProducts(string searchTerm)
     {
         IQueryable<Product> query=_db.Products;
 
-        if(!string.IsNullOrWhiteSpace(name))
+        var searchTermLowered= searchTerm.ToLower().Trim();
+
+        if(!string.IsNullOrWhiteSpace(searchTerm))
         {
-           query = query.Where(p=>p.Name.ToLower().Trim() == name.ToLower().Trim());
+           query = query.Include(p => p.Category).Where(p=>p.Name.ToLower().Trim().Contains(searchTermLowered) 
+           || p.Description.ToLower().Trim().Contains(searchTermLowered));
         }
         return query.OrderBy(p => p.Name).ToList();
     }

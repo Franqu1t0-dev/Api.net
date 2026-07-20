@@ -83,7 +83,7 @@ namespace ApiEcommerce.Controllers
 
         } 
 
-        [HttpGet("searchByCategory/{categoryId:int}", Name = "GetProductForCategory")]
+        [HttpGet("searchProductByCategory/{categoryId:int}", Name = "GetProductForCategory")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetProductsForCategory(int categoryId)
@@ -92,7 +92,23 @@ namespace ApiEcommerce.Controllers
 
             if (products.Count == 0)
             {
-                return NotFound($"Los producto con la categoría {categoryId} no existe.");
+                return NotFound($"Los productos con la categoría {categoryId} no existe.");
+            }
+
+            var productsDto = _mapper.Map<List<ProductDto>>(products);
+
+            return Ok(productsDto);
+        }
+         [HttpGet("searchProductByNameDescription/{searchTerm}", Name = "SearchProducts")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult SearchProducts(string searchTerm)
+        {
+            var products = _productRepository.SearchProducts(searchTerm);
+
+            if (products.Count == 0)
+            {
+                return NotFound($"Los productos con el nombre '{searchTerm}' o descripcion no existen.");
             }
 
             var productsDto = _mapper.Map<List<ProductDto>>(products);

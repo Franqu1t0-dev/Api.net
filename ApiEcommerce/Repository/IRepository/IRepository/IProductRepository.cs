@@ -11,7 +11,7 @@ public interface IProductRepository
     ICollection<Product> GetProductsForCategory(int categoryId);
 //        → Recibe un categoryId y devuelve los productos
 //          de esa categoría en ICollection del tipo Product.
-    ICollection <Product> SearchProduct (string name);
+    ICollection <Product> SearchProducts (string searchTerm);
 //        → Recibe un nombre y devuelve los productos
 //          que coincidan en ICollection del tipo Product.
 
