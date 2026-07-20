@@ -21,4 +21,5 @@ public class ProductDto
     public int CategoryId { get; set; }
     public required Category Category { get; set; }
 
+    public string CategoryName { get; set; }= string.Empty;
 }

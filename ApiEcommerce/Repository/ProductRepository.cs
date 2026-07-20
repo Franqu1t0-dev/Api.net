@@ -1,6 +1,7 @@
 using System;
 using ApiEcommerce.Models;
 using ApiEcommerce.Repository.IRepository;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiEcommerce.RepositoryM;
 public class ProductRepository : IProductRepository
@@ -16,7 +17,7 @@ public class ProductRepository : IProductRepository
     {
         //Devuelve todos los productos
         //en ICollection del tipo Product.
-        return _db.Products.OrderBy(p=>p.Name).ToList();
+        return _db.Products.Include(p => p.Category).OrderBy(p=>p.Name).ToList();
     }
 
     public ICollection<Product> GetProductsForCategory(int categoryId)
@@ -25,7 +26,7 @@ public class ProductRepository : IProductRepository
         {
             return new List<Product>();
         }
-        return _db.Products.Where(p=>p.CategoryId == categoryId).OrderBy(p=>p.Name).ToList();
+        return _db.Products.Include(p => p.Category).Where(p=>p.CategoryId == categoryId).OrderBy(p=>p.Name).ToList();
     }
     public ICollection<Product> SearchProduct(string name)
     {
@@ -43,7 +44,7 @@ public class ProductRepository : IProductRepository
         {
             return null;
         }
-        return _db.Products.FirstOrDefault(p=> p.ProductId == id) ;
+        return _db.Products.Include(p => p.Category).FirstOrDefault(p=> p.ProductId == id) ;
     }
     public bool BuyProduct(string name, int quantity)
     {
