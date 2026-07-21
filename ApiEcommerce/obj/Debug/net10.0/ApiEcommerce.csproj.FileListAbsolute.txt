@@ -163,3 +163,4 @@ C:\Users\Usuario\Desktop\DotNet\Api.net\ApiEcommerce\obj\Debug\net10.0\ApiEcomme
 C:\Users\Usuario\Desktop\DotNet\Api.net\ApiEcommerce\obj\Debug\net10.0\ApiEcommerce.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\DotNet\Api.net\ApiEcommerce\obj\Debug\net10.0\ref\ApiEcommerce.dll
 C:\Users\Usuario\Desktop\DotNet\Api.net\ApiEcommerce\bin\Debug\net10.0\BCrypt-Net-Next.dll
+C:\Users\Usuario\Desktop\DotNet\Api.net\ApiEcommerce\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
