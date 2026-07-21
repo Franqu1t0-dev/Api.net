@@ -2,6 +2,7 @@ using ApiEcommerce.Models;
 using ApiEcommerce.Models.Dtos;
 using ApiEcommerce.Repository.IRepository;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,7 +10,7 @@ namespace ApiEcommerce.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-
+    [Authorize(Roles = "Admin")]
     public class ProductsController : ControllerBase
     {
         private readonly IProductRepository _productRepository;
@@ -22,6 +23,8 @@ namespace ApiEcommerce.Controllers
             _mapper =mapper;
 
         }
+
+        [AllowAnonymous]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -32,7 +35,7 @@ namespace ApiEcommerce.Controllers
             var productsDto = _mapper.Map<List<ProductDto>>(products);
             return Ok(productsDto);
         }
-
+        [AllowAnonymous]
         [HttpGet("{productId:int}", Name = "GetProduct")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -49,6 +52,7 @@ namespace ApiEcommerce.Controllers
 
             return Ok(productsDto);
         }
+        
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -82,7 +86,7 @@ namespace ApiEcommerce.Controllers
             return CreatedAtRoute("GetProduct", new { productId = product.ProductId},productDto);
 
         } 
-
+        [AllowAnonymous]
         [HttpGet("searchProductByCategory/{categoryId:int}", Name = "GetProductForCategory")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -99,6 +103,7 @@ namespace ApiEcommerce.Controllers
 
             return Ok(productsDto);
         }
+        [AllowAnonymous]
         [HttpGet("searchProductByNameDescription/{searchTerm}", Name = "SearchProducts")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
