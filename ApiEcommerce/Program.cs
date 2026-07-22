@@ -37,7 +37,7 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true,//verifico que el token este firmado con clave válida
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),//verifico que sea UTF8, estableciendo la clave secreta para validar el token
         ValidateIssuer = false,//No valido el emisor del token
-        ValidateAudience = true//No se valida el publico del token si no se necesita restringir a ciertos clientes
+        ValidateAudience = false//No se valida el publico del token si no se necesita restringir a ciertos clientes
     };
 });
 builder.Services.AddControllers();
