@@ -12,8 +12,7 @@ namespace ApiEcommerce.Controllers
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [Authorize(Roles = "Admin")]
-    [ApiVersion("1.0")]
-    [ApiVersion("2.0")]
+    [ApiVersionNeutral]
     public class ProductsController : ControllerBase
     {
         private readonly IProductRepository _productRepository;
