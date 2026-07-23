@@ -35,10 +35,10 @@ namespace ApiEcommerce.Controllers
             var userDto = _mapper.Map<List<UserDto>>(users);
             return Ok(userDto);
         }
-        [HttpGet("{id:int}", Name = "GetUser")]
+        [HttpGet("{id}", Name = "GetUser")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult GetUser(int id)
+        public IActionResult GetUser(string id)
         {
             var user = _userRepository.GetUser(id);
 
