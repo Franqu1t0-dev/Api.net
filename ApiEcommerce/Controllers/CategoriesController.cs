@@ -42,7 +42,8 @@ namespace ApiEcommerce.Controllers
         }
         [AllowAnonymous]
         [HttpGet("{id:int}", Name = "GetCategory")]
-        [ResponseCache(Duration = 10)]
+        //[ResponseCache(Duration = 10)]
+        [ResponseCache(CacheProfileName=CacheProfiles.Default10)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetCategory(int id)
