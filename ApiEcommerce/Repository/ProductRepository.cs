@@ -120,5 +120,15 @@ public class ProductRepository : IProductRepository
     {
         return _db.SaveChanges() >=0;
     }
-    
+
+    public ICollection<Product> GetProductsInPages(int pageNumber, int pageSize)
+    {
+        return _db.Products.OrderBy(p=>p.ProductId)
+        .Skip((pageNumber-1)*pageSize).Take(pageSize).ToList();
+    }
+
+    public int GetTotalProducts()
+    {
+        return _db.Products.Count(); 
+    }
 }

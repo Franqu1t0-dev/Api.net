@@ -7,6 +7,10 @@ public interface IProductRepository
 {
   // Tu código aquí
     ICollection<Product> GetProducts();
+
+    ICollection<Product> GetProductsInPages(int pageNumber, int pageSize);
+
+    int GetTotalProducts();
     
     ICollection<Product> GetProductsForCategory(int categoryId);
 //        → Recibe un categoryId y devuelve los productos
