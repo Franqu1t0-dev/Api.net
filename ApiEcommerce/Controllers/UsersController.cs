@@ -2,7 +2,7 @@ using ApiEcommerce.Models;
 using ApiEcommerce.Models.Dtos;
 using ApiEcommerce.Repository.IRepository;
 using Asp.Versioning;
-using AutoMapper;
+using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,13 +17,9 @@ namespace ApiEcommerce.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
-        private readonly IMapper _mapper;
-        public UsersController(IUserRepository userRepository, IMapper mapper)
+        public UsersController(IUserRepository userRepository)
         {
             _userRepository= userRepository;
-            //_categoryRepository= categoryRepository;
-            _mapper =mapper;
-
         }
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
@@ -32,7 +28,7 @@ namespace ApiEcommerce.Controllers
         public IActionResult GetUsers()
         {
             var users = _userRepository.GetUsers();
-            var userDto = _mapper.Map<List<UserDto>>(users);
+            var userDto = users.Adapt<List<UserDto>>();
             return Ok(userDto);
         }
         [HttpGet("{id}", Name = "GetUser")]
@@ -47,7 +43,7 @@ namespace ApiEcommerce.Controllers
                 return NotFound($"El usuario con el id {id} no existe.");
             }
 
-            var usersDto = _mapper.Map<UserDto>(user);
+            var usersDto = user.Adapt<UserDto>();
 
             return Ok(usersDto);
         }

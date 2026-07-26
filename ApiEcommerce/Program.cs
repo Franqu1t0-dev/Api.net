@@ -3,6 +3,7 @@ using ApiEcommerce.Constants;
 using ApiEcommerce.Data;
 using ApiEcommerce.Models;
 using ApiEcommerce.Repository;
+using ApiEcommerce.Mapping;
 using ApiEcommerce.Repository.IRepository;
 using ApiEcommerce.RepositoryM;
 using Asp.Versioning;
@@ -35,7 +36,7 @@ builder.Services.AddResponseCaching(options =>
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddAutoMapper(typeof(Program).Assembly);
+MapsterMapping.RegisterMappings();
 builder.Services.AddIdentity<ApplicationUser,IdentityRole>()
 .AddEntityFrameworkStores<ApplicationDbContext>()
 .AddDefaultTokenProviders();
